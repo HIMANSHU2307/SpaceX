@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
+## Lighthouse score for Performance, SEO and Accessibility
+![Capture](https://user-images.githubusercontent.com/34489523/98589591-804f2580-22f3-11eb-9abc-d8d2a42021f7.PNG)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
