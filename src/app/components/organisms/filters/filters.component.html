@@ -1,0 +1,6 @@
+<div class="filter">
+  <h2 class="filter__section-heading">Filters</h2>
+  <app-filter-section (applyFilter)="handleFilter($event)" [filterHead]="'Launch Year'" [filterData]="launchYearList"></app-filter-section>
+  <app-filter-section (applyFilter)="handleFilter($event)" [filterHead]="'Successful Launch'" [filterData]="launchSuccessList"></app-filter-section>
+  <app-filter-section (applyFilter)="handleFilter($event)" [filterHead]="'Successful landing'" [filterData]="launchLandingList"></app-filter-section>
+</div>

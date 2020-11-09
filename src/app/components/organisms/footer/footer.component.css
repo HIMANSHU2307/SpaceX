@@ -1,0 +1,14 @@
+.footer-details {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-details > p {
+  display: inline-block;
+}
+
+.footer-details > p > b {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,16 @@
+<div class="main-container">
+  <app-header></app-header>
+  <main class="main-container__section">
+    <section class="main-container__section__filters">
+      <app-filters (callForData)= "getData($event)"></app-filters>
+    </section>
+    <section class="main-container__section__missions">
+      <app-mission-list></app-mission-list>
+    </section>
+  </main>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>
+
+<app-loader [loader]="isLoading"></app-loader>

@@ -1,0 +1,43 @@
+.main-container {
+  background-color: var(--background-page-color);
+  padding: 0rem 1rem ;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container__section__filters {
+  flex: 1;
+  margin: 1rem;
+}
+
+.main-container__section__missions {
+  flex: 1;
+  margin: 1rem;
+}
+
+@media only screen
+  and (min-device-width : 700px) {
+    .main-container__section {
+      flex-direction: row;
+    }
+
+    .main-container__section__missions {
+      flex: 2;
+    }
+}
+
+@media only screen
+  and (min-device-width : 1024px){
+    .main-container__section {
+      flex-direction: row;
+    }
+
+    .main-container__section__missions {
+      flex: 4;
+    }
+}

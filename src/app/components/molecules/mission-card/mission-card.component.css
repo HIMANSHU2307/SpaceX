@@ -1,0 +1,82 @@
+.mission-card {
+  /* padding: 1rem;
+  background-color: var(--background-section-color);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0rem 0rem 1rem 0rem; */
+  padding: 1rem;
+  background-color: var(--background-section-color);
+  border-radius: 0.5rem;
+  width: auto;
+}
+
+.mission-card__patch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 0.5rem;
+  background-color: var(--background-page-color);
+}
+
+.mission-card__patch > img {
+  width: auto;
+  height: 175px;
+}
+
+.mission-card__detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card__detail__mission {
+  font-size: 0.8rem;
+  color: var(--detail-font-color);
+  margin: 0.5rem 0rem;
+}
+
+.mission-card__detail__missionDetail {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card__detail__missionDetail__Id {
+  display: flex;
+  flex-direction: column;
+}
+
+h4, p {
+  font-size: 0.8rem;
+  margin: 0rem 0.2rem 0.5rem 0rem;
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 0rem 0.0rem 0.5rem 0rem;
+  color: var(--detail-font-color);
+}
+
+.mission-card__detail__missionDetail__Id > ul {
+  font-size: 0.8rem;
+  margin: 0rem 0rem 0.5rem 0rem;
+  color: var(--detail-font-color);
+}
+
+.mission-card__detail__missionDetail__info {
+  display: flex;
+}
+
+@media only screen
+  and (min-device-width : 700px) {
+    .mission-card {
+      width: 100%;
+    }
+}
+
+@media only screen
+  and (min-device-width : 1024px) {
+    .mission-card {
+      width: 100%;
+    }
+}

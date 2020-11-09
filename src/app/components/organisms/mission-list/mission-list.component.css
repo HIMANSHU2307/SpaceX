@@ -1,0 +1,37 @@
+.mission-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.mission-list__card {
+  width: 100%;
+  margin: 1rem 0rem;
+}
+
+
+@media only screen
+  and (min-device-width : 700px) {
+    .mission-list {
+      flex-direction: row;
+    }
+
+    .mission-list__card {
+      width: 40%;
+      margin: 0rem 1rem 1rem 0rem;
+    }
+}
+
+@media only screen
+  and (min-device-width : 1024px) {
+    .mission-list {
+      flex-direction: row;
+    }
+
+    .mission-list__card {
+      width: 20%;
+      margin: 0rem 1rem 1rem 0rem;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="filter-section">
+  <p class="filter-section__header">{{filterHead}}</p>
+  <div class="filter-section__options">
+    <ng-container *ngFor="let filter of filterData">
+      <button class="BtnInActive"
+        [ngClass]="{'BtnInActive': filter.is_Active === false, 'BtnActive':filter.is_Active === true }"
+        (click)="handleFilter(filter)"
+      >
+        {{filter.value}}
+      </button>
+    </ng-container>
+  </div>
+</div>
