@@ -107,7 +107,6 @@ export class FiltersComponent implements OnInit {
   }
 
   handleFilter(event) {
-    console.log(event);
     switch (event.filterSection) {
       case 'Launch Year':
         if (event.data.is_Active) {
@@ -149,7 +148,6 @@ export class FiltersComponent implements OnInit {
         break;
     }
     this.query = this.querylaunchYear + this.querysuccessLanding + this.querysuccessLaunch;
-    console.log(this.query);
     this.callForData.emit(this.query);
   }
 
