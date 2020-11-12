@@ -122,7 +122,7 @@ export class FiltersComponent implements OnInit {
         this.querylaunchYear = '';
         this.querysuccessLaunch = '';
         this.querysuccessLanding = '';
-
+        debugger;
         if (params.launch_year) {
           this.launchYear = params.launch_year;
           this.querylaunchYear = `&launch_year=${this.launchYear}`;
@@ -154,6 +154,7 @@ export class FiltersComponent implements OnInit {
   }
 
   handleFilter(event) {
+    debugger;
     switch (event.filterSection) {
       case 'Launch Year':
         if (event.data.is_Active) {
@@ -195,6 +196,9 @@ export class FiltersComponent implements OnInit {
         break;
     }
     this.query = this.querylaunchYear + this.querysuccessLanding + this.querysuccessLaunch;
+    this.querylaunchYear ? null : this.launchYear = '';
+    this.querysuccessLaunch ? null : this.successLaunch = '';
+    this.querysuccessLanding ? null : this.successLanding = '';
     this.router.navigate([''], { queryParams: {
       launch_year: this.launchYear,
       launch_success:  this.successLaunch,
