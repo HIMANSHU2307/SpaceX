@@ -107,28 +107,48 @@ export class FiltersComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public router: Router,
-  ) { }
+  ) {
+    this.setFilterValue();
+   }
 
   ngOnInit() {
+    this.handleQueryParam();
+  }
+
+  handleQueryParam() {
+
     this.route.queryParams
       .subscribe(params => {
+        this.querylaunchYear = '';
+        this.querysuccessLaunch = '';
+        this.querysuccessLanding = '';
+
         if (params.launch_year) {
           this.launchYear = params.launch_year;
           this.querylaunchYear = `&launch_year=${this.launchYear}`;
-          this.launchYearList.forEach(year => year.value === this.launchYear ? year.is_Active = true : null );
+          this.launchYearList.forEach(year => year.value === this.launchYear ? year.is_Active = true : year.is_Active = false );
+        } else {
+          this.launchYearList.forEach(year => year.is_Active = false );
         }
+
         if (params.launch_success) {
           this.successLaunch = params.launch_success;
           this.querysuccessLaunch = `&launch_success=${this.successLaunch}`;
-          this.launchSuccessList.forEach(launch => launch.value === this.successLaunch ? launch.is_Active = true : null );
+          this.launchSuccessList.forEach(launch => launch.value === this.successLaunch ? launch.is_Active = true : launch.is_Active = false );
+        } else {
+          this.launchSuccessList.forEach(launch => launch.is_Active = false );
         }
+
         if (params.land_success) {
           this.successLanding = params.land_success;
           this.querysuccessLanding = `&land_success=${this.successLanding}`;
-          this.launchLandingList.forEach(land => land.value === this.successLanding ? land.is_Active = true : null );
-
+          this.launchLandingList.forEach(land => land.value === this.successLanding ? land.is_Active = true : land.is_Active = false );
+        } else {
+          this.launchLandingList.forEach(land => land.is_Active = false );
         }
+
         this.query = this.querylaunchYear + this.querysuccessLanding + this.querysuccessLaunch;
+
         this.callForData.emit(this.query);
       });
   }
@@ -181,6 +201,93 @@ export class FiltersComponent implements OnInit {
       land_success: this.successLanding
     } });
     this.callForData.emit(this.query);
+  }
+
+  setFilterValue() {
+    this.launchYearList = [
+      {
+        value: '2006',
+        is_Active: false
+      },
+      {
+        value: '2007',
+        is_Active: false
+      },
+      {
+        value: '2008',
+        is_Active: false
+      },
+      {
+        value: '2009',
+        is_Active: false
+      },
+      {
+        value: '2010',
+        is_Active: false
+      },
+      {
+        value: '2011',
+        is_Active: false
+      },
+      {
+        value: '2012',
+        is_Active: false
+      },
+      {
+        value: '2013',
+        is_Active: false
+      },
+      {
+        value: '2014',
+        is_Active: false
+      },
+      {
+        value: '2015',
+        is_Active: false
+      },
+      {
+        value: '2016',
+        is_Active: false
+      },
+      {
+        value: '2017',
+        is_Active: false
+      },
+      {
+        value: '2018',
+        is_Active: false
+      },
+      {
+        value: '2019',
+        is_Active: false
+      },
+      {
+        value: '2020',
+        is_Active: false
+      }
+    ];
+
+    this.launchSuccessList = [
+      {
+        value: 'true',
+        is_Active: false
+      },
+      {
+        value: 'false',
+        is_Active: false
+      }
+    ];
+
+    this.launchLandingList = [
+      {
+        value: 'true',
+        is_Active: false
+      },
+      {
+        value: 'false',
+        is_Active: false
+      }
+    ];
   }
 
 }
